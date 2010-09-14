@@ -1,0 +1,23 @@
+http-simple.js contains 2 functions:
+
+get(url, params, callback);
+post(url, params, callback);
+
+These two functions make the use of the node.js 'http' module simpler.
+(no need to handle chunks, streams, or encodings)
+
+Example:
+
+var hs = require('./http-simple.js');
+hs.get('http://github.com/search', {'q': 'node', 'type': 'Everything'}, function(r){
+   console.log('response:' + r);
+});
+
+Other example:
+
+var hs = require('./http-simple.js');
+hs.post('http://github.com/search', {'q': 'node', 'type': 'Everything'}, function(r){
+  console.log('response: ' + r);
+});
+
+See demo.js for more examples.
